@@ -107,7 +107,6 @@ enum IdentifiableSeasonality
 	SA_PRESENT = 3;
 }
 
-
 message CombinedSeasonalityTest{
 	IdentifiableSeasonality seasonality = 1;
 	jd3.StatisticalTest kruskal_wallis = 2;
