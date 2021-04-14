@@ -5,7 +5,7 @@ jd2r_test<-function(jtest){
     desc<-.jcall(jtest, "S", "getDescription")
     val<-.jcall(jtest, "D", "getValue")
     pval<-.jcall(jtest, "D", "getPvalue")
-    return (list(value=val, pvalue=pval, distribution=desc))
+    return (rjd3toolkit::statisticaltest(val, pval, desc))
   }
 }
 
@@ -13,7 +13,7 @@ p2r_test<-function(p){
   if (is.null(p))
     return (NULL)
   else{
-    return (p$as.list())
+    return (rjd3toolkit::statisticaltest(p$value, p$pvalue, p$description))
   }
 }
 
@@ -25,7 +25,7 @@ test_anova<-function(ssm, dfm, ssr, dfr){
   val<-(ssm/dfm)*(dfr/ssr)
   desc=paste0("F(",dfm,",",dfr,")")
   pval<-1-pf(val, dfm, dfr)
-  return (list(value=val, pvalue=pval, distribution=desc))
+  return (rjd3toolkit::statisticaltest(val, pval, desc))
 }
 
 enum_extract<-function(type, p){

@@ -21,6 +21,8 @@ RoxygenNote: 7.1.1
 BugReports: https://github.com/jdemetra/rjdemetra3/issues
 Encoding: UTF-8
 Collate: 
+    'decomposition.R'
+    'generics.R'
     'utils.R'
     'seasonality.R'
     'zzz.R'
