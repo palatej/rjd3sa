@@ -1,5 +1,6 @@
 syntax = "proto3";
 import public "toolkit.proto";
+import public "modelling.proto";
 
 package sa;
 
@@ -26,23 +27,13 @@ enum DecompositionMode {
   PSEUDOADDITIVE = 3;
 }
 
-
-
-message Component{
-	jd3.TsData data = 1;
-	/* The length of stde should be the same as the length of data */
-	repeated double stde = 2;
-	int32 nbcasts = 3; 
-	int32 nfcasts = 4;
-}
-
 message SaDecomposition{
 	DecompositionMode mode = 1;
-	Component series = 2;
-	Component seasonally_adjusted = 3;
-	Component trend = 4;
-	Component seasonal = 5;
-	Component irregular = 6;
+	modelling.Component series = 2;
+	modelling.Component seasonally_adjusted = 3;
+	modelling.Component trend = 4;
+	modelling.Component seasonal = 5;
+	modelling.Component irregular = 6;
 }
 
 enum BenchmarkingTarget {
