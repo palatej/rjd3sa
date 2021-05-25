@@ -29,11 +29,11 @@ enum DecompositionMode {
 
 message SaDecomposition{
 	DecompositionMode mode = 1;
-	modelling.Component series = 2;
-	modelling.Component seasonally_adjusted = 3;
-	modelling.Component trend = 4;
-	modelling.Component seasonal = 5;
-	modelling.Component irregular = 6;
+	modelling.TsComponent series = 2;
+	modelling.TsComponent seasonally_adjusted = 3;
+	modelling.TsComponent trend = 4;
+	modelling.TsComponent seasonal = 5;
+	modelling.TsComponent irregular = 6;
 }
 
 enum BenchmarkingTarget {
