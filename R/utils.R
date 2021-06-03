@@ -8,3 +8,13 @@ test_anova<-function(ssm, dfm, ssr, dfr){
   pval<-1-pf(val, dfm, dfr)
   return (statisticaltest(val, pval, desc))
 }
+
+ts_r2jd<-function(s){
+  if (is.null(s)){
+    return (NULL)
+  }
+  freq<-frequency(s)
+  start<-start(s)
+  .jcall("demetra/timeseries/r/TsUtility", "Ldemetra/timeseries/TsData;", "of",
+         as.integer(freq), as.integer(start[1]), as.integer(start[2]), as.double(s))
+}
