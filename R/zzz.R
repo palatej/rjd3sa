@@ -17,6 +17,9 @@ jd2r_test<-NULL
   .JD3_ENV$p2r_sa_component<-p2r_sa_component
   .JD3_ENV$p2r_component<-p2r_component
   .JD3_ENV$p2r_sa_decomposition<-p2r_sa_decomposition
+  .JD3_ENV$p2r_sa_decomposition<-p2r_sa_decomposition
+  .JD3_ENV$p2r_spec_benchmarking<-p2r_spec_benchmarking
+  .JD3_ENV$r2p_spec_benchmarking<-r2p_spec_benchmarking
 
   p2r_test<<-.JD3_ENV$p2r_test
   enum_extract<<-.JD3_ENV$enum_extract

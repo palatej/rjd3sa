@@ -97,3 +97,26 @@ ts_move<-function(period, freq, delta){
   return (c(x %/% freq, (x %% freq)+1))
 }
 
+# Benchmarking
+
+p2r_spec_benchmarking<-function(p){
+  return (list(
+    enabled=p$enabled,
+    target=enum_extract(sa.BenchmarkingTarget, p$target),
+    lambda=p$lambda,
+    rho=p$rho,
+    bias=enum_extract(sa.BenchmarkingBias, p$bias),
+    forecast=p$forecast
+  ))
+}
+
+r2p_spec_benchmarking<-function(r){
+  p<-sa.BenchmarkingSpec$new()
+  p$enabled<-r$enabled
+  p$target<-enum_of(sa.BenchmarkingTarget, r$target, "BENCH")
+  p$lambda<-r$lambda
+  p$rho<-r$rho
+  p$bias<-enum_of(sa.BenchmarkingBias, r$bias, "BENCH")
+  p$forecast<-r$forecast
+  return (p)
+}
