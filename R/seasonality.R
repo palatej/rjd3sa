@@ -116,7 +116,7 @@ seasonality.combined<-function(data, period, firstperiod=1, mul=T){
 #' @export
 #'
 #' @examples
-td.f<-function(s, model=c("AR", "D1", "WN"), nyears=0){
+td.f<-function(s, model=c("D1", "DY", "DYD1", "WN", "AIRLINE", "R011", "R100"), nyears=0){
   model<-match.arg(model)
   jts<-ts_r2jd(s)
   jtest<-.jcall("demetra/sa/r/TradingDaysTests", "Ldemetra/stats/StatisticalTest;", "fTest",
