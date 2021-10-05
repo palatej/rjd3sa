@@ -35,7 +35,7 @@ sadecomposition<-function(y, sa, t, s, i, mul){
   if (! is.ts(sa))stop("Invalid SA decomposition")
   if (! is.ts(t))stop("Invalid SA decomposition")
 
-  return (structure(list(series=y, sa=sa, trend=t, seas=s, irr=i, multiplicative=mul), class=c("JD3SADECOMPOSITION", "JD3")))
+  return (structure(list(series=y, sa=sa, trend=t, seas=s, irr=i, multiplicative=mul), class=c("JD3_SADECOMPOSITION", "JD3")))
 }
 
 #' Title
@@ -47,6 +47,6 @@ sadecomposition<-function(y, sa, t, s, i, mul){
 #' @export
 #'
 #' @examples
-print.JD3SADECOMPOSITION<-function(x,...){
+print.JD3_SADECOMPOSITION<-function(x,...){
   print(ts.union(series=x$series,sa=x$sa,trend=x$trend,seas=x$seas,irr=x$irr))
 }
