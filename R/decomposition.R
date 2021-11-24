@@ -41,7 +41,7 @@ sadecomposition<-function(y, sa, t, s, i, mul){
 #' Title
 #'
 #' @param x
-#' @param ...
+#' @param ... unused
 #'
 #' @return
 #' @export

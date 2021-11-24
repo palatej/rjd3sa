@@ -2,16 +2,25 @@
 % Please edit documentation in R/seasonality.R
 \name{seasonality.periodogram}
 \alias{seasonality.periodogram}
-\title{Title}
+\title{Periodogram Seasonality Test}
 \usage{
 seasonality.periodogram(data, period, nyears = 0)
 }
 \arguments{
-\item{nyears}{}
+\item{data}{the input time series.}
+
+\item{period}{the periodicity of the data.}
+
+\item{nyears}{\code{integer} that corresponds to number of periods number of periods starting from the end of the series:
+in periods (positive value) or years (negative values).
+By default (\code{nyears = 0}), the entire sample is used.}
 }
 \value{
 
 }
 \description{
-Title
+Periodogram Seasonality Test
+}
+\details{
+Tests on the sum of a periodogram at seasonal frequencies
 }

@@ -2,16 +2,23 @@
 % Please edit documentation in R/seasonality.R
 \name{seasonality.combined}
 \alias{seasonality.combined}
-\title{Title}
+\title{“X12” Test On Seasonality}
 \usage{
 seasonality.combined(data, period, firstperiod = 1, mul = T)
 }
 \arguments{
-\item{mul}{}
+\item{data}{the input time series.}
+
+\item{period}{the periodicity of the data.}
+
+\item{mul}{boolean indicating if the seasonal decomposition is multiplicative (\code{mul = TRUE}) or additive (\code{mul = FALSE}).}
 }
 \value{
 
 }
 \description{
-Title
+“X12” Test On Seasonality
+}
+\details{
+Combined test on the presence of identifiable seasonality (see Ladiray and Quenneville, 1999).
 }

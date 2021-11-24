@@ -1,4 +1,9 @@
-#' @importFrom rjd3toolkit .JD3_ENV
+#' @importFrom rjd3toolkit .JD3_ENV statisticaltest
+#' @import rJava
+#' @import rjd3modelling
+#' @importFrom RProtoBuf read readProtoFiles2
+#' @importFrom rJava .jpackage
+#' @importFrom stats frequency is.ts pf ts ts.union
 NULL
 
 enum_extract<-NULL

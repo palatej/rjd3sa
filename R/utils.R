@@ -6,7 +6,7 @@ test_anova<-function(ssm, dfm, ssr, dfr){
   val<-(ssm/dfm)*(dfr/ssr)
   desc=paste0("F(",dfm,",",dfr,")")
   pval<-1-pf(val, dfm, dfr)
-  return (statisticaltest(val, pval, desc))
+  return (rjd3toolkit::statisticaltest(val, pval, desc))
 }
 
 ts_r2jd<-function(s){

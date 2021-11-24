@@ -7,7 +7,7 @@
 \method{print}{JD3_SADECOMPOSITION}(x, ...)
 }
 \arguments{
-\item{...}{}
+\item{...}{unused}
 }
 \value{
 

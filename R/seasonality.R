@@ -1,11 +1,13 @@
 #' @include utils.R
 NULL
 
-#' Title
+#' QS Seasonality Test (auto-correlations at seasonal lags)
 #'
-#' @param data
-#' @param period
-#' @param nyears
+#' @param data the input time series.
+#' @param period the periodicity of the data.
+#' @param nyears \code{integer} that corresponds to number of periods number of periods starting from the end of the series:
+#' in periods (positive value) or years (negative values).
+#' By default (\code{nyears = 0}), the entire sample is used.
 #'
 #' @return
 #' @export
@@ -17,12 +19,12 @@ seasonality.qs<-function(data, period, nyears=0){
   return (jd2r_test(jtest))
 }
 
-#' Title
+#' Kruskall-Wallis Seasonality Test
 #'
-#' @param data
-#' @param period
-#' @param nyears
 #'
+#' @inheritParams seasonality.qs
+#'
+#' @details Non parametric test on the ranks
 #' @return
 #' @export
 #'
@@ -33,12 +35,11 @@ seasonality.kruskalwallis<-function(data, period, nyears=0){
   return (jd2r_test(jtest))
 }
 
-#' Title
+#' Periodogram Seasonality Test
 #'
-#' @param data
-#' @param period
-#' @param nyears
+#' @inheritParams seasonality.qs
 #'
+#' @details Tests on the sum of a periodogram at seasonal frequencies
 #' @return
 #' @export
 #'
@@ -49,12 +50,11 @@ seasonality.periodogram<-function(data, period, nyears=0){
   return (jd2r_test(jtest))
 }
 
-#' Title
+#' Friedman Seasonality Test
 #'
-#' @param data
-#' @param period
-#' @param nyears
+#' @inheritParams seasonality.qs
 #'
+#' @details Non parametric test ("ANOVA"-type)
 #' @return
 #' @export
 #'
@@ -65,13 +65,11 @@ seasonality.friedman<-function(data, period, nyears=0){
   return (jd2r_test(jtest))
 }
 
-#' Title
+#' F-test on seasonal dummies
 #'
-#' @param data
-#' @param period
-#' @param model
-#' @param nyears
-#'
+#' @inheritParams seasonality.qs
+#' @param model the model to use for the residuals.
+#' @details Estimation of a model with seasonal dummies. Joint F-test on the coefficients of the dummies.
 #' @return
 #' @export
 #'
@@ -83,13 +81,12 @@ seasonality.f<-function(data, period, model=c("AR", "D1", "WN"), nyears=0){
   return (jd2r_test(jtest))
 }
 
-#' Title
+#' “X12” Test On Seasonality
 #'
-#' @param data
-#' @param period
+#' @inheritParams seasonality.qs
 #' @param firstperiod
-#' @param mul
-#'
+#' @param mul boolean indicating if the seasonal decomposition is multiplicative (\code{mul = TRUE}) or additive (\code{mul = FALSE}).
+#' @details Combined test on the presence of identifiable seasonality (see Ladiray and Quenneville, 1999).
 #' @return
 #' @export
 #'
@@ -106,13 +103,33 @@ seasonality.combined<-function(data, period, firstperiod=1, mul=T){
     evolutive=p2r_anova(p$evolutive_seasonality)))
 }
 
-#' Title
+#' Trading Days Test
 #'
-#' @param s
-#' @param model
-#' @param nyears
+#' @inheritParams seasonality.qs
+#' @param s a \code{ts} object that corresponds to the input time series to test.
+#' @param model the model to use for the residuals. See details.
 #'
-#' @return
+#' @details \loadmathjax
+#' The function performs a residual seasonality test that is a joint F-Test on the coefficients of trading days regressors.
+#' Several specifications can be used on the model:
+#' \itemize{
+#' \item \code{model = "WN"} the following model is used:
+#' \mjsdeqn{
+#' y_t - \bar y =\beta TD_t +  \varepsilon_t
+#' }
+#' \item \code{model = "D1"} (the default) the following model is used:
+#' \mjsdeqn{
+#' \Delta y_t - \overline{\Delta y} =\beta \Delta TD_t +  \varepsilon_t
+#' }
+#' \item \code{model = "DY"} the following model is used:
+#' \mjsdeqn{
+#' \Delta_s y_t - \overline{\Delta_s y} =\beta \Delta_s TD_t +  \varepsilon_t
+#' }
+#' \item \code{model = "DYD1"} the following model is used:
+#' \mjsdeqn{
+#' \Delta_s\Delta y_t - \overline{\Delta_s \Delta y} =\beta \Delta_s \Delta TD_t +  \varepsilon_t
+#' }
+#' }
 #' @export
 #'
 #' @examples

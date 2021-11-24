@@ -2,16 +2,25 @@
 % Please edit documentation in R/seasonality.R
 \name{seasonality.friedman}
 \alias{seasonality.friedman}
-\title{Title}
+\title{Friedman Seasonality Test}
 \usage{
 seasonality.friedman(data, period, nyears = 0)
 }
 \arguments{
-\item{nyears}{}
+\item{data}{the input time series.}
+
+\item{period}{the periodicity of the data.}
+
+\item{nyears}{\code{integer} that corresponds to number of periods number of periods starting from the end of the series:
+in periods (positive value) or years (negative values).
+By default (\code{nyears = 0}), the entire sample is used.}
 }
 \value{
 
 }
 \description{
-Title
+Friedman Seasonality Test
+}
+\details{
+Non parametric test ("ANOVA"-type)
 }
