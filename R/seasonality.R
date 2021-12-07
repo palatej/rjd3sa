@@ -106,22 +106,4 @@ seasonality.combined<-function(data, period, firstperiod=1, mul=T){
     evolutive=p2r_anova(p$evolutive_seasonality)))
 }
 
-#' Title
-#'
-#' @param s
-#' @param model
-#' @param nyears
-#'
-#' @return
-#' @export
-#'
-#' @examples
-td.f<-function(s, model=c("D1", "DY", "DYD1", "WN", "AIRLINE", "R011", "R100"), nyears=0){
-  model<-match.arg(model)
-  jts<-ts_r2jd(s)
-  jtest<-.jcall("demetra/sa/r/TradingDaysTests", "Ldemetra/stats/StatisticalTest;", "fTest",
-                jts, model, as.integer(nyears))
-  return (jd2r_test(jtest))
-}
-
 
