@@ -102,3 +102,4 @@ seasonality.combined<-function(data, period, firstperiod=1, mul=T){
     stable=p2r_anova(p$stable_seasonality),
     evolutive=p2r_anova(p$evolutive_seasonality)))
 }
+
