@@ -7,6 +7,7 @@ p2r_test<-NULL
 jd2r_test<-NULL
 
 .onLoad <- function(libname, pkgname) {
+  suppressMessages(require(rjd3modelling))
   result <- .jpackage(pkgname, lib.loc=libname)
   if (!result) stop("Loading java packages failed")
 
