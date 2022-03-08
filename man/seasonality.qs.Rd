@@ -2,16 +2,24 @@
 % Please edit documentation in R/seasonality.R
 \name{seasonality.qs}
 \alias{seasonality.qs}
-\title{Title}
+\title{QS (modified seasonal Ljung-Box) test}
 \usage{
 seasonality.qs(data, period, nyears = 0)
 }
 \arguments{
-\item{nyears}{}
+\item{data}{Data (numerics)}
+
+\item{period}{Tested periodicity}
+
+\item{nyears}{Number of cycles considered in the test, at the end of the series. 0 for using the whole series}
 }
 \value{
 
 }
 \description{
-Title
+QS (modified seasonal Ljung-Box) test
+}
+\examples{
+seasonality.qs(rjd3toolkit::ABS$X0.2.09.10.M, 12)
+seasonality.qs(rjd3toolkit::randomsT(2, 1000), 7)
 }
