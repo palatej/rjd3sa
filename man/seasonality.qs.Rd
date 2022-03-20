@@ -2,16 +2,16 @@
 % Please edit documentation in R/seasonality.R
 \name{seasonality.qs}
 \alias{seasonality.qs}
-\title{QS Seasonality Test (auto-correlations at seasonal lags)}
+\title{QS Seasonality Test}
 \usage{
 seasonality.qs(data, period, nyears = 0)
 }
 \arguments{
-\item{data}{the input time series.}
+\item{data}{the input data.}
 
-\item{period}{the periodicity of the data.}
+\item{period}{Tested periodicity.}
 
-\item{nyears}{\code{integer} that corresponds to number of periods number of periods starting from the end of the series:
+\item{nyears}{Number of number of periods number of cycles considered in the test, at the end of the series:
 in periods (positive value) or years (negative values).
 By default (\code{nyears = 0}), the entire sample is used.}
 }
@@ -19,5 +19,9 @@ By default (\code{nyears = 0}), the entire sample is used.}
 
 }
 \description{
-QS Seasonality Test (auto-correlations at seasonal lags)
+QS (modified seasonal Ljung-Box) test
+}
+\examples{
+seasonality.qs(rjd3toolkit::ABS$X0.2.09.10.M, 12)
+seasonality.qs(rjd3toolkit::randomsT(2, 1000), 7)
 }

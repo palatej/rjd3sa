@@ -7,13 +7,13 @@
 seasonality.f(data, period, model = c("AR", "D1", "WN"), nyears = 0)
 }
 \arguments{
-\item{data}{the input time series.}
+\item{data}{the input data.}
 
-\item{period}{the periodicity of the data.}
+\item{period}{Tested periodicity.}
 
 \item{model}{the model to use for the residuals.}
 
-\item{nyears}{\code{integer} that corresponds to number of periods number of periods starting from the end of the series:
+\item{nyears}{Number of number of periods number of cycles considered in the test, at the end of the series:
 in periods (positive value) or years (negative values).
 By default (\code{nyears = 0}), the entire sample is used.}
 }

@@ -7,9 +7,9 @@
 seasonality.combined(data, period, firstperiod = 1, mul = T)
 }
 \arguments{
-\item{data}{the input time series.}
+\item{data}{the input data.}
 
-\item{period}{the periodicity of the data.}
+\item{period}{Tested periodicity.}
 
 \item{mul}{boolean indicating if the seasonal decomposition is multiplicative (\code{mul = TRUE}) or additive (\code{mul = FALSE}).}
 }

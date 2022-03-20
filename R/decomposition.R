@@ -1,3 +1,7 @@
+#' @importFrom stats is.ts ts ts.union
+NULL
+
+
 #' Title
 #'
 #' @param y
