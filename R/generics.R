@@ -1,26 +1,30 @@
-#' Title
+#' Generic Preprocessing Function
 #'
-#' @param x
-#' @param ...
+#' Generic function for preprocessing defined in other packages.
 #'
-#' @return
+#' @param x,... parameters.
+#'
 #' @export
-#'
-#' @examples
 sa.preprocessing<-function(x, ...){
   UseMethod("sa.preprocessing")
 }
 
 
-#' Title
+#' Generic Function for Seasonal Adjustment Decomposition
 #'
-#' @param x
-#' @param ...
+#' Generic function to format the seasonal adjustment decomposition components.
+#' \code{sa.decomposition()} is a generic function defined in other packages.
 #'
-#' @return
+#' @param y,sa,t,s,i,mul seasonal adjustment decomposition parameters.
+#' @param x the object to print.
+#' @param ... further arguments (ignored).
+#'
+#' @return \code{"JD3_SADECOMPOSITION"} object.
+#' @name sa.decomposition
+NULL
+
 #' @export
-#'
-#' @examples
+#' @rdname sa.decomposition
 sa.decomposition<-function(x, ...){
   UseMethod("sa.decomposition")
 }

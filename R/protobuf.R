@@ -63,7 +63,7 @@ p2r_sa_component<-function(p){
 
 p2r_sa_decomposition<-function(p, full=F){
   if (full){
-    return (list(mode = rjd3toolkit:::enum_extract(sa.DecompositionMode, p$mode),
+    return (list(mode = rjd3toolkit::enum_extract(sa.DecompositionMode, p$mode),
                  series=p2r_sa_component(p$series),
                  sa=p2r_sa_component(p$seasonally_adjusted),
                  t=p2r_sa_component(p$trend),
@@ -71,7 +71,7 @@ p2r_sa_decomposition<-function(p, full=F){
                  i=p2r_sa_component(p$irregular)
     ))
   }else{
-    return (list(mode = rjd3toolkit:::enum_extract(sa.DecompositionMode, p$mode),
+    return (list(mode = rjd3toolkit::enum_extract(sa.DecompositionMode, p$mode),
                  series=p2r_component(p$series),
                  sa=p2r_component(p$seasonally_adjusted),
                  t=p2r_component(p$trend),
@@ -83,12 +83,12 @@ p2r_sa_decomposition<-function(p, full=F){
 
 p2r_sa_diagnostics<-function(p){
   return (list(vardecomposition =p$variance_decomposition$as.list(),
-               seas.ftest.i=rjd3toolkit:::p2r_test(p$seasonal_ftest_on_irregular),
-               seas.ftest.sa=rjd3toolkit:::p2r_test(p$seasonal_ftest_on_sa),
-               seas.qstest.i=rjd3toolkit:::p2r_test(p$seasonal_qtest_on_irregular),
-               seas.qstest.sa=rjd3toolkit:::p2r_test(p$seasonal_qtest_on_sa),
-               td.ftest.i=rjd3toolkit:::p2r_test(p$td_ftest_on_irregular),
-               td.ftest.sa=rjd3toolkit:::p2r_test(p$td_ftest_on_sa)
+               seas.ftest.i=rjd3toolkit::p2r_test(p$seasonal_ftest_on_irregular),
+               seas.ftest.sa=rjd3toolkit::p2r_test(p$seasonal_ftest_on_sa),
+               seas.qstest.i=rjd3toolkit::p2r_test(p$seasonal_qtest_on_irregular),
+               seas.qstest.sa=rjd3toolkit::p2r_test(p$seasonal_qtest_on_sa),
+               td.ftest.i=rjd3toolkit::p2r_test(p$td_ftest_on_irregular),
+               td.ftest.sa=rjd3toolkit::p2r_test(p$td_ftest_on_sa)
   ))
 
 }
@@ -106,10 +106,10 @@ ts_move<-function(period, freq, delta){
 p2r_spec_benchmarking<-function(p){
   return (list(
     enabled=p$enabled,
-    target=rjd3toolkit:::enum_extract(sa.BenchmarkingTarget, p$target),
+    target=rjd3toolkit::enum_extract(sa.BenchmarkingTarget, p$target),
     lambda=p$lambda,
     rho=p$rho,
-    bias=rjd3toolkit:::enum_extract(sa.BenchmarkingBias, p$bias),
+    bias=rjd3toolkit::enum_extract(sa.BenchmarkingBias, p$bias),
     forecast=p$forecast
   ))
 }
@@ -117,10 +117,10 @@ p2r_spec_benchmarking<-function(p){
 r2p_spec_benchmarking<-function(r){
   p<-sa.BenchmarkingSpec$new()
   p$enabled<-r$enabled
-  p$target<-rjd3toolkit:::enum_of(sa.BenchmarkingTarget, r$target, "BENCH")
+  p$target<-rjd3toolkit::enum_of(sa.BenchmarkingTarget, r$target, "BENCH")
   p$lambda<-r$lambda
   p$rho<-r$rho
-  p$bias<-rjd3toolkit:::enum_of(sa.BenchmarkingBias, r$bias, "BENCH")
+  p$bias<-rjd3toolkit::enum_of(sa.BenchmarkingBias, r$bias, "BENCH")
   p$forecast<-r$forecast
   return (p)
 }

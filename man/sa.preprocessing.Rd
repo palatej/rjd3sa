@@ -2,16 +2,13 @@
 % Please edit documentation in R/generics.R
 \name{sa.preprocessing}
 \alias{sa.preprocessing}
-\title{Title}
+\title{Generic Preprocessing Function}
 \usage{
 sa.preprocessing(x, ...)
 }
 \arguments{
-\item{...}{}
-}
-\value{
-
+\item{x, ...}{parameters.}
 }
 \description{
-Title
+Generic function for preprocessing defined in other packages.
 }

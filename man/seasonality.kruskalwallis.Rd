@@ -16,11 +16,15 @@ in periods (positive value) or years (negative values).
 By default (\code{nyears = 0}), the entire sample is used.}
 }
 \value{
-
+A \code{c("JD3_TEST", "JD3")} object (see \code{\link[rjd3toolkit]{statisticaltest}} for details).
 }
 \description{
 Kruskall-Wallis Seasonality Test
 }
 \details{
 Non parametric test on the ranks
+}
+\examples{
+seasonality.kruskalwallis(rjd3toolkit::ABS$X0.2.09.10.M, 12)
+seasonality.kruskalwallis(rjd3toolkit::randomsT(2, 1000), 7)
 }
