@@ -5,14 +5,15 @@ Version: 0.2.0
 Authors@R: c(
   person("Jean", "Palate", role = c("aut", "cre"),
                 email = "jean.palate@nbb.be"))
-Description: Interface around 'JDemetra+ 3.x' sa-toolkit (<https://github.com/jdemetra/jdemetra-core>), STACE project 
+Description: Interface around 'JDemetra+ 3.x' sa-toolkit (<https://github.com/jdemetra/jdemetra-core>), STACE project. 
 Depends:
   R (>= 3.6.0),
 Imports:
   rJava (>= 1.0-6),
   RProtoBuf (>= 0.4.17),
   rjd3toolkit (>= 0.2.0),
-  rjd3modelling (>= 0.2.0)
+  rjd3modelling (>= 0.2.0),
+	mathjaxr
 SystemRequirements: Java SE 8 or higher
 License: EUPL
 URL: https://github.com/jdemetra/rjd3sa
@@ -21,6 +22,7 @@ Suggests:
     knitr,
     rmarkdown
 RoxygenNote: 7.1.2
+RdMacros: mathjaxr
 BugReports: https://github.com/jdemetra/rjdemetra3/issues
 Encoding: UTF-8
 Collate: 

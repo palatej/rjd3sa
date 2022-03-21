@@ -2,16 +2,31 @@
 % Please edit documentation in R/seasonality.R
 \name{seasonality.f}
 \alias{seasonality.f}
-\title{Title}
+\title{F-test on seasonal dummies}
 \usage{
 seasonality.f(data, period, model = c("AR", "D1", "WN"), nyears = 0)
 }
 \arguments{
-\item{nyears}{}
+\item{data}{the input data.}
+
+\item{period}{Tested periodicity.}
+
+\item{model}{the model to use for the residuals.}
+
+\item{nyears}{Number of number of periods number of cycles considered in the test, at the end of the series:
+in periods (positive value) or years (negative values).
+By default (\code{nyears = 0}), the entire sample is used.}
 }
 \value{
-
+A \code{c("JD3_TEST", "JD3")} object (see \code{\link[rjd3toolkit]{statisticaltest}} for details).
 }
 \description{
-Title
+F-test on seasonal dummies
+}
+\details{
+Estimation of a model with seasonal dummies. Joint F-test on the coefficients of the dummies.
+}
+\examples{
+seasonality.f(rjd3toolkit::ABS$X0.2.09.10.M, 12)
+seasonality.f(rjd3toolkit::randomsT(2, 1000), 7)
 }

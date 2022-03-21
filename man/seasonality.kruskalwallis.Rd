@@ -2,16 +2,29 @@
 % Please edit documentation in R/seasonality.R
 \name{seasonality.kruskalwallis}
 \alias{seasonality.kruskalwallis}
-\title{Title}
+\title{Kruskall-Wallis Seasonality Test}
 \usage{
 seasonality.kruskalwallis(data, period, nyears = 0)
 }
 \arguments{
-\item{nyears}{}
+\item{data}{the input data.}
+
+\item{period}{Tested periodicity.}
+
+\item{nyears}{Number of number of periods number of cycles considered in the test, at the end of the series:
+in periods (positive value) or years (negative values).
+By default (\code{nyears = 0}), the entire sample is used.}
 }
 \value{
-
+A \code{c("JD3_TEST", "JD3")} object (see \code{\link[rjd3toolkit]{statisticaltest}} for details).
 }
 \description{
-Title
+Kruskall-Wallis Seasonality Test
+}
+\details{
+Non parametric test on the ranks
+}
+\examples{
+seasonality.kruskalwallis(rjd3toolkit::ABS$X0.2.09.10.M, 12)
+seasonality.kruskalwallis(rjd3toolkit::randomsT(2, 1000), 7)
 }

@@ -2,16 +2,25 @@
 % Please edit documentation in R/seasonality.R
 \name{seasonality.friedman}
 \alias{seasonality.friedman}
-\title{Title}
+\title{Friedman Seasonality Test}
 \usage{
 seasonality.friedman(data, period, nyears = 0)
 }
 \arguments{
-\item{nyears}{}
+\item{data}{the input data.}
+
+\item{period}{Tested periodicity.}
+
+\item{nyears}{Number of number of periods number of cycles considered in the test, at the end of the series:
+in periods (positive value) or years (negative values).
+By default (\code{nyears = 0}), the entire sample is used.}
 }
 \value{
-
+A \code{c("JD3_TEST", "JD3")} object (see \code{\link[rjd3toolkit]{statisticaltest}} for details).
 }
 \description{
-Title
+Friedman Seasonality Test
+}
+\details{
+Non parametric test ("ANOVA"-type)
 }

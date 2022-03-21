@@ -2,19 +2,8 @@
 NULL
 
 
-#' Title
-#'
-#' @param y
-#' @param sa
-#' @param t
-#' @param s
-#' @param i
-#' @param mul
-#'
-#' @return
+#' @rdname sa.decomposition
 #' @export
-#'
-#' @examples
 sadecomposition<-function(y, sa, t, s, i, mul){
   if (! is.logical(mul))stop("Invalid SA decomposition")
   if (is.null(y))stop("Invalid SA decomposition")
@@ -42,15 +31,8 @@ sadecomposition<-function(y, sa, t, s, i, mul){
   return (structure(list(series=y, sa=sa, trend=t, seas=s, irr=i, multiplicative=mul), class=c("JD3_SADECOMPOSITION", "JD3")))
 }
 
-#' Title
-#'
-#' @param x
-#' @param ...
-#'
-#' @return
+#' @rdname sa.decomposition
 #' @export
-#'
-#' @examples
 print.JD3_SADECOMPOSITION<-function(x,...){
   print(ts.union(series=x$series,sa=x$sa,trend=x$trend,seas=x$seas,irr=x$irr))
 }
