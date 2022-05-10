@@ -118,3 +118,21 @@ seasonality.combined<-function(data, period, firstperiod=1, mul=T){
     evolutive=p2r_anova(p$evolutive_seasonality)))
 }
 
+#' Title
+#'
+#' @param data
+#' @param p0 Initial periodicity (included)
+#' @param p1 Final periodicity (included)
+#' @param np Number of periodicities equally spaced in [p0,p1]
+#' @param original True for original algorithm, False for solution proposed by T. Proietti (based on Ox code)
+#'
+#' @return
+#' @export
+#'
+#' @examples
+seasonality.canovahansen<-function(data, p0, p1, np, original=FALSE){
+  jtest<-.jcall("demetra/sa/r/SeasonalityTests", "[D", "canovaHansenTest",
+                as.numeric(data), as.numeric(p0), as.numeric(p1), as.integer(np), as.logical(original))
+  return (jtest)
+}
+
