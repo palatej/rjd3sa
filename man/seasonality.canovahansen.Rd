@@ -2,22 +2,21 @@
 % Please edit documentation in R/seasonality.R
 \name{seasonality.canovahansen}
 \alias{seasonality.canovahansen}
-\title{Title}
+\title{Seasonal Canova-Hansen test}
 \usage{
 seasonality.canovahansen(data, p0, p1, np, original = FALSE)
 }
 \arguments{
+\item{data}{the input data.}
+
 \item{p0}{Initial periodicity (included)}
 
 \item{p1}{Final periodicity (included)}
 
-\item{np}{Number of periodicities equally spaced in [p0,p1]}
+\item{np}{Number of periodicities equally spaced in $[p0,p1]$}
 
 \item{original}{True for original algorithm, False for solution proposed by T. Proietti (based on Ox code)}
 }
-\value{
-
-}
 \description{
-Title
+Seasonal Canova-Hansen test
 }

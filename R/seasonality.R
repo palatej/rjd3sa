@@ -12,7 +12,7 @@ NULL
 #' in periods (positive value) or years (negative values).
 #' By default (\code{nyears = 0}), the entire sample is used.
 #'
-#' @return A \code{c("JD3_TEST", "JD3")} object (see \code{\link[rjd3toolkit]{statisticaltest}} for details).
+#' @return A `c("JD3_TEST", "JD3")` object (see [rjd3toolkit::statisticaltest()] for details).
 #' @export
 #'
 #' @examples
@@ -30,7 +30,7 @@ seasonality.qs<-function(data, period, nyears=0){
 #' @inheritParams seasonality.qs
 #'
 #' @details Non parametric test on the ranks
-#' @return A \code{c("JD3_TEST", "JD3")} object (see \code{\link[rjd3toolkit]{statisticaltest}} for details).
+#' @return A `c("JD3_TEST", "JD3")` object (see [rjd3toolkit::statisticaltest()] for details).
 #' @export
 #'
 #' @examples
@@ -47,7 +47,7 @@ seasonality.kruskalwallis<-function(data, period, nyears=0){
 #' @inheritParams seasonality.qs
 #'
 #' @details Tests on the sum of a periodogram at seasonal frequencies
-#' @return A \code{c("JD3_TEST", "JD3")} object (see \code{\link[rjd3toolkit]{statisticaltest}} for details).
+#' @return A `c("JD3_TEST", "JD3")` object (see [rjd3toolkit::statisticaltest()] for details).
 #' @export
 #'
 #' @examples
@@ -64,7 +64,7 @@ seasonality.periodogram<-function(data, period, nyears=0){
 #' @inheritParams seasonality.qs
 #'
 #' @details Non parametric test ("ANOVA"-type)
-#' @return A \code{c("JD3_TEST", "JD3")} object (see \code{\link[rjd3toolkit]{statisticaltest}} for details).
+#' @return A `c("JD3_TEST", "JD3")` object (see [rjd3toolkit::statisticaltest()] for details).
 #' @export
 #'
 #' @examples
@@ -79,7 +79,7 @@ seasonality.friedman<-function(data, period, nyears=0){
 #' @inheritParams seasonality.qs
 #' @param model the model to use for the residuals.
 #' @details Estimation of a model with seasonal dummies. Joint F-test on the coefficients of the dummies.
-#' @return A \code{c("JD3_TEST", "JD3")} object (see \code{\link[rjd3toolkit]{statisticaltest}} for details).
+#' @return A `c("JD3_TEST", "JD3")` object (see [rjd3toolkit::statisticaltest()] for details).
 #' @export
 #'
 #' @examples
@@ -99,7 +99,7 @@ seasonality.f<-function(data, period,
 #'
 #' @inheritParams seasonality.qs
 #' @param firstperiod
-#' @param mul boolean indicating if the seasonal decomposition is multiplicative (\code{mul = TRUE}) or additive (\code{mul = FALSE}).
+#' @param mul boolean indicating if the seasonal decomposition is multiplicative (`mul = TRUE`) or additive (`mul = FALSE`).
 #' @details Combined test on the presence of identifiable seasonality (see Ladiray and Quenneville, 1999).
 #' @export
 #'
@@ -118,15 +118,14 @@ seasonality.combined<-function(data, period, firstperiod=1, mul=T){
     evolutive=p2r_anova(p$evolutive_seasonality)))
 }
 
-#' Title
+#' Seasonal Canova-Hansen test
 #'
-#' @param data
+#' @inheritParams seasonality.qs
 #' @param p0 Initial periodicity (included)
 #' @param p1 Final periodicity (included)
-#' @param np Number of periodicities equally spaced in [p0,p1]
+#' @param np Number of periodicities equally spaced in $\[p0,p1\]$
 #' @param original True for original algorithm, False for solution proposed by T. Proietti (based on Ox code)
 #'
-#' @return
 #' @export
 #'
 #' @examples
