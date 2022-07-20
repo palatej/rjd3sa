@@ -2,6 +2,16 @@
 #' @import RProtoBuf
 NULL
 
+#' Java Utility Functions
+#'
+#' These functions are used in all JDemetra+ 3.0 packages to easily interact between R and Java objects.
+#'
+#' @param p,r parameters.
+#'
+#' @name jd3_utilities
+NULL
+#> NULL
+
 p2r_component<-function(p){
   s<-p$data$values
   n<-length(s)
@@ -23,7 +33,8 @@ p2r_component<-function(p){
   }
   return (rslt)
 }
-
+#' @export
+#' @rdname jd3_utilities
 p2r_sa_component<-function(p){
   e<-p$stde
   if (length(e) == 0) return (p2r_component(p))
@@ -61,6 +72,8 @@ p2r_sa_component<-function(p){
   return (rslt)
 }
 
+#' @export
+#' @rdname jd3_utilities
 p2r_sa_decomposition<-function(p, full=F){
   if (full){
     return (list(mode = rjd3toolkit::enum_extract(sa.DecompositionMode, p$mode),
@@ -81,6 +94,8 @@ p2r_sa_decomposition<-function(p, full=F){
   }
 }
 
+#' @export
+#' @rdname jd3_utilities
 p2r_sa_diagnostics<-function(p){
   return (list(vardecomposition =p$variance_decomposition$as.list(),
                seas.ftest.i=rjd3toolkit::p2r_test(p$seasonal_ftest_on_irregular),
@@ -102,7 +117,8 @@ ts_move<-function(period, freq, delta){
 }
 
 # Benchmarking
-
+#' @export
+#' @rdname jd3_utilities
 p2r_spec_benchmarking<-function(p){
   return (list(
     enabled=p$enabled,
@@ -113,7 +129,8 @@ p2r_spec_benchmarking<-function(p){
     forecast=p$forecast
   ))
 }
-
+#' @export
+#' @rdname jd3_utilities
 r2p_spec_benchmarking<-function(r){
   p<-sa.BenchmarkingSpec$new()
   p$enabled<-r$enabled
