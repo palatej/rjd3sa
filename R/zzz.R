@@ -1,7 +1,7 @@
 #' @importFrom RProtoBuf read readProtoFiles2
 #' @importFrom rJava .jpackage .jcall .jnull .jarray .jevalArray .jcast .jcastToArray .jinstanceof is.jnull .jnew .jclass
 #' @importFrom stats frequency is.ts pf ts ts.union
-#' @importFrom rjd3modelling
+#' @import rjd3modelling
 NULL
 
 .onLoad <- function(libname, pkgname) {
