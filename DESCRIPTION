@@ -4,7 +4,10 @@ Title: Interface to 'JDemetra+ 3.0' Seasonal Adjustment Software
 Version: 0.3.2
 Authors@R: c(
   person("Jean", "Palate", role = c("aut", "cre"),
-                email = "jean.palate@nbb.be"))
+                email = "jean.palate@nbb.be"),
+  person("Alain", "Quartier-la-Tente", role = c("aut"),
+                 email = "alain.quartier@yahoo.fr",
+                 comment = c(ORCID = "0000-0001-7890-3857")))
 Description: Interface around 'JDemetra+ 3.x' sa-toolkit (<https://github.com/jdemetra/jdemetra-core>), STACE project. 
 Depends:
   R (>= 3.6.0),
