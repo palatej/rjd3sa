@@ -22,7 +22,7 @@ A \code{c("JD3_TEST", "JD3")} object (see \code{\link[rjd3toolkit:statisticaltes
 Kruskall-Wallis Seasonality Test
 }
 \details{
-Non parametric test on the ranks
+Non parametric test on the ranks.
 }
 \examples{
 seasonality.kruskalwallis(rjd3toolkit::ABS$X0.2.09.10.M, 12)

@@ -22,5 +22,5 @@ A \code{c("JD3_TEST", "JD3")} object (see \code{\link[rjd3toolkit:statisticaltes
 Friedman Seasonality Test
 }
 \details{
-Non parametric test ("ANOVA"-type)
+Non parametric test ("ANOVA"-type).
 }

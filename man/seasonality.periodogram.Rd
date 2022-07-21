@@ -22,7 +22,7 @@ A \code{c("JD3_TEST", "JD3")} object (see \code{\link[rjd3toolkit:statisticaltes
 Periodogram Seasonality Test
 }
 \details{
-Tests on the sum of a periodogram at seasonal frequencies
+Tests on the sum of a periodogram at seasonal frequencies.
 }
 \examples{
 seasonality.periodogram(rjd3toolkit::ABS$X0.2.09.10.M, 12)

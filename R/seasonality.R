@@ -4,7 +4,7 @@ NULL
 
 #' QS Seasonality Test
 #'
-#' QS (modified seasonal Ljung-Box) test
+#' QS (modified seasonal Ljung-Box) test.
 #'
 #' @param data the input data.
 #' @param period Tested periodicity.
@@ -29,7 +29,7 @@ seasonality.qs<-function(data, period, nyears=0){
 #'
 #' @inheritParams seasonality.qs
 #'
-#' @details Non parametric test on the ranks
+#' @details Non parametric test on the ranks.
 #' @return A `c("JD3_TEST", "JD3")` object (see [rjd3toolkit::statisticaltest()] for details).
 #' @export
 #'
@@ -46,7 +46,7 @@ seasonality.kruskalwallis<-function(data, period, nyears=0){
 #'
 #' @inheritParams seasonality.qs
 #'
-#' @details Tests on the sum of a periodogram at seasonal frequencies
+#' @details Tests on the sum of a periodogram at seasonal frequencies.
 #' @return A `c("JD3_TEST", "JD3")` object (see [rjd3toolkit::statisticaltest()] for details).
 #' @export
 #'
@@ -63,7 +63,7 @@ seasonality.periodogram<-function(data, period, nyears=0){
 #'
 #' @inheritParams seasonality.qs
 #'
-#' @details Non parametric test ("ANOVA"-type)
+#' @details Non parametric test ("ANOVA"-type).
 #' @return A `c("JD3_TEST", "JD3")` object (see [rjd3toolkit::statisticaltest()] for details).
 #' @export
 #'
