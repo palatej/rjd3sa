@@ -17,6 +17,7 @@ sa.preprocessing<-function(x, ...){
 #'
 #' @param y,sa,t,s,i,mul seasonal adjustment decomposition parameters.
 #' @param x the object to print.
+#' @param n_last_obs number of observations to print (by default equal to the frequency of the series).
 #' @param ... further arguments (ignored).
 #'
 #' @return \code{"JD3_SADECOMPOSITION"} object.

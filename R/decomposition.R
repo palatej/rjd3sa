@@ -11,16 +11,16 @@ sadecomposition<-function(y, sa, t, s, i, mul){
   n=length(y)
   if (is.null(s)){
     if (mul){
-      s=ts(rep(1,1,n))
+      s=ts(rep(1,1,n), start = start(y), frequency = frequency(y))
     }else{
-      s=ts(rep(0,1,n))
+      s=ts(rep(0,1,n), start = start(y), frequency = frequency(y))
     }
   } else if (! is.ts(s))stop("Invalid SA decomposition")
   if (is.null(i)){
     if (mul){
-      i=ts(rep(1,1,n))
+      i=ts(rep(1,1,n), start = start(y), frequency = frequency(y))
     }else{
-      i=ts(rep(0,1,n))
+      i=ts(rep(0,1,n), start = start(y), frequency = frequency(y))
     }
   } else if (! is.ts(i))stop("Invalid SA decomposition")
 
@@ -33,6 +33,11 @@ sadecomposition<-function(y, sa, t, s, i, mul){
 
 #' @rdname sa.decomposition
 #' @export
-print.JD3_SADECOMPOSITION<-function(x,...){
-  print(ts.union(series=x$series,sa=x$sa,trend=x$trend,seas=x$seas,irr=x$irr))
+print.JD3_SADECOMPOSITION<-function(x, n_last_obs = frequency(x$series), ...){
+  cat("Last values\n")
+  print(tail(
+    .preformat.ts(ts.union(series=x$series,sa=x$sa,trend=x$trend,seas=x$seas,irr=x$irr),...),
+    n_last_obs
+    )
+  )
 }

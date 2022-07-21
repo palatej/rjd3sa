@@ -8,7 +8,7 @@
 \usage{
 sadecomposition(y, sa, t, s, i, mul)
 
-\method{print}{JD3_SADECOMPOSITION}(x, ...)
+\method{print}{JD3_SADECOMPOSITION}(x, n_last_obs = frequency(x$series), ...)
 
 sa.decomposition(x, ...)
 }
@@ -16,6 +16,8 @@ sa.decomposition(x, ...)
 \item{y, sa, t, s, i, mul}{seasonal adjustment decomposition parameters.}
 
 \item{x}{the object to print.}
+
+\item{n_last_obs}{number of observations to print (by default equal to the frequency of the series).}
 
 \item{...}{further arguments (ignored).}
 }
