@@ -20,7 +20,7 @@ p2r_spec_benchmarking(p)
 r2p_spec_benchmarking(r)
 }
 \arguments{
-\item{p, r}{parameters.}
+\item{p, r, full}{parameters.}
 }
 \description{
 These functions are used in all JDemetra+ 3.0 packages to easily interact between R and Java objects.
