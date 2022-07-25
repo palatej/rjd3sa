@@ -18,7 +18,12 @@ sa.preprocessing<-function(x, ...){
 #' @param y,sa,t,s,i,mul seasonal adjustment decomposition parameters.
 #' @param x the object to print.
 #' @param n_last_obs number of observations to print (by default equal to the frequency of the series).
-#' @param ... further arguments (ignored).
+#' @param first_date,last_date first and last date to plot (by default all the data is used).
+#' @param type_chart the chart to plot: `"sa-trend"` (by default) plots the input time series,
+#' the seasonally adjusted and the trend; `"seas-irr"` plots the seasonal and the irregular components.
+#' @param caption the caption of the plot.
+#' @param colors the colors used in the plot.
+#' @param ... further arguments.
 #'
 #' @return \code{"JD3_SADECOMPOSITION"} object.
 #' @name sa.decomposition
