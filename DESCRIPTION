@@ -19,14 +19,14 @@ Imports:
   rjd3modelling (>= 0.3.2)
 SystemRequirements: Java JRE 17 or higher
 License: EUPL
-URL: https://github.com/jdemetra/rjd3sa
+URL: https://github.com/palatej/rjd3sa
 LazyData: TRUE
 Suggests:
     knitr,
     rmarkdown
 RoxygenNote: 7.2.0
 Roxygen: list(markdown = TRUE)
-BugReports: https://github.com/jdemetra/rjdemetra3/issues
+BugReports: https://github.com/palatej/rjd3sa/issues
 Encoding: UTF-8
 Collate: 
     'decomposition.R'
