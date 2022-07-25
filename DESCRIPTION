@@ -1,6 +1,6 @@
 Package: rjd3sa
 Type: Package
-Title: Interface to 'JDemetra+ 3.0' Seasonal Adjustment Software
+Title: Seasonality Tests with 'JDemetra+ 3.0'
 Version: 0.3.2
 Authors@R: c(
   person("Jean", "Palate", role = c("aut", "cre"),
@@ -8,7 +8,8 @@ Authors@R: c(
   person("Alain", "Quartier-la-Tente", role = c("aut"),
                  email = "alain.quartier@yahoo.fr",
                  comment = c(ORCID = "0000-0001-7890-3857")))
-Description: Interface around 'JDemetra+ 3.x' sa-toolkit (<https://github.com/jdemetra/jdemetra-core>), STACE project. 
+Description: Interface around 'JDemetra+ 3.x' (<https://github.com/jdemetra/jdemetra-core>) seasonal adjustment software, STACE project.
+ It offers full acces to functions to test the presence of seasonality in a time series.
 Depends:
   R (>= 3.6.0),
 Imports:
